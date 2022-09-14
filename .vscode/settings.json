@@ -1,5 +1,7 @@
 {
     "cSpell.words": [
-        "todos"
-    ]
+        "todos",
+        "Todosis"
+    ],
+    "editor.formatOnSave": true
 }
