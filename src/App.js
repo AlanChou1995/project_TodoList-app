@@ -8,27 +8,26 @@ import {
     TodoInput,
     AddButton,
 } from './components/styled';
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useLayoutEffect } from 'react'
 import TodoItem from './components/TodoItem'
 
-const localStorageTodos = todos => localStorage.setItem('todos', JSON.stringify(todos));
-
 const App = () => {
+    const [todos, setTodos] = useState([
+        { id: 1, inputValue: 'Todo...', isDone: false },
+    ]);
     const [inputValue, setInputValue] = useState('');
-    const [todos, setTodos] = useState([{ id: 1, inputValue: 'Todo...', isDone: false }]);
     const id = useRef(2);
-    useEffect(() => {
-        const localData = localStorage.getItem('todos') || '';
-        if (localData) {
-            setTodos(JSON.parse(localData))
-        };
+    useLayoutEffect(() => {
+        const todoData = JSON.parse(localStorage.getItem('todos')) || '';
+        if (todoData) {
+            setTodos(todoData)
+        }
     }, []);
     useEffect(() => {
-        localStorageTodos(todos);
+        localStorage.setItem('todos', JSON.stringify(todos));
     }, [todos])
     const handleInputChange = (even) => {
-        setInputValue
-            (even.target.value);
+        setInputValue(even.target.value);
     }
     const handleAddClick = () => {
         if (inputValue === '') {
@@ -59,7 +58,7 @@ const App = () => {
             <TodoCard>
                 <Title>Simple Todo List</Title>
                 <UserBox>
-                    <TodoInput placeholder='Text' onChange={handleInputChange} value={inputValue} />
+                    <TodoInput type='text' placeholder='Text' onChange={handleInputChange} value={inputValue} />
                     <AddButton onClick={handleAddClick}>Add</AddButton>
                 </UserBox>
                 {

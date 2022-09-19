@@ -28,5 +28,4 @@ const TodoItem = ({ todo, handleDeleteClick, handleStateClick }) => {
     )
 }
 
-export default TodoItem
-    ;
+export default TodoItem;
