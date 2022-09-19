@@ -8,21 +8,23 @@ import {
     TodoInput,
     AddButton,
 } from './components/styled';
-import { useState, useRef, useEffect, useLayoutEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import TodoItem from './components/TodoItem'
 
+
 const App = () => {
-    const [todos, setTodos] = useState([
-        { id: 1, inputValue: 'Todo...', isDone: false },
-    ]);
-    const [inputValue, setInputValue] = useState('');
     const id = useRef(2);
-    useLayoutEffect(() => {
-        const todoData = JSON.parse(localStorage.getItem('todos')) || '';
+    const [todos, setTodos] = useState(() => {
+        let todoData = localStorage.getItem('todos') || '';
         if (todoData) {
-            setTodos(todoData)
+            todoData = JSON.parse(todoData);;
+            id.current = todoData[0].id + 1;
+        } else {
+            todoData = [];
         }
-    }, []);
+        return todoData;
+    });
+    const [inputValue, setInputValue] = useState('');
     useEffect(() => {
         localStorage.setItem('todos', JSON.stringify(todos));
     }, [todos])
