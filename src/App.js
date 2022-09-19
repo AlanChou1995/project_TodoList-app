@@ -58,9 +58,9 @@ const App = () => {
             <TodoCard>
                 <Title>Simple Todo List</Title>
                 <UserBox>
-                    <TodoInput type='text' placeholder='Text' onChange={handleInputChange} value={inputValue} />
+                    <TodoInput placeholder='Text' onChange={handleInputChange} value={inputValue} />
                     <AddButton onClick={handleAddClick}>Add</AddButton>
-                </UserBox>
+                </UserBox >
                 {
                     todos.map(
                         todo =>
@@ -72,8 +72,8 @@ const App = () => {
                             />
                     )
                 }
-            </TodoCard>
-        </Container>
+            </TodoCard >
+        </Container >
     )
 }
 export default App
