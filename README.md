@@ -1,7 +1,7 @@
 # React project
->Weather-app for Taiwan
+>A Simple Todo List
 
-![CleanShot 2022-09-12 at 18 04 35](https://user-images.githubusercontent.com/99056343/189627643-d1a0667c-2e15-4f39-b75a-e1ed0f8b8f96.gif)
+![CleanShot 2022-09-20 at 21 26 30](https://user-images.githubusercontent.com/99056343/191270126-a2d1e10f-a29e-4c38-91f3-9432d40ad04d.gif)
 
 
 <h3>學習來源</h3> 
