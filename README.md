@@ -15,7 +15,7 @@
 - styled component
 
 <h3>App功能</h3>
-- Location <br>
+- LocalStorage <br>
 - Add Todos <br>
 - Todos state button <br>
 - Delete Todos button <br>
