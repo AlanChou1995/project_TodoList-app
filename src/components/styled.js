@@ -6,7 +6,7 @@ const Container = styled.div`
     align-items:center;
 `
 const TodoCard = styled.div`
-    margin-top:50px;
+    margin-top:100px;
     width:600px;
     border:0.5px solid;
     border-radius:8px;
