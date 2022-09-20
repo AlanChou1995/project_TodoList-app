@@ -12,7 +12,6 @@
 - useEffect <br>
 - useRef <br>
 - localStorage <br>
-- PWA <br>
 - styled component
 
 <h3>App功能</h3>
