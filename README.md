@@ -5,7 +5,7 @@
 
 
 <h3>學習來源</h3> 
-<a href="https://lidemy.com"target="_blank">Lidemy 鋰學院</a>
+<a href="https://lidemy.com" target="_blank">Lidemy 鋰學院</a>
 
 <h3>學習使用</h3>
 - useState <br>
