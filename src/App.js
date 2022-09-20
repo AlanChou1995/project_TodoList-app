@@ -17,10 +17,11 @@ const App = () => {
     const [todos, setTodos] = useState(() => {
         let todoData = localStorage.getItem('todos') || '';
         if (todoData) {
-            todoData = JSON.parse(todoData);;
+            todoData = JSON.parse(todoData);
             id.current = todoData[0].id + 1;
-        } else {
-            todoData = [];
+        }
+        if (!todoData) {
+            return [{ id: 1, inputValue: 'Todos...', isDone: false }]
         }
         return todoData;
     });
@@ -44,7 +45,11 @@ const App = () => {
         }
     }
     const handleDeleteClick = id => {
-        setTodos(todos.filter(todo => todo.id !== id))
+        if (todos.length > 1) {
+            setTodos(todos.filter(todo => todo.id !== id))
+        } else {
+            alert('You must add at least one todo !')
+        }
     }
     const handleStateClick = (id) => {
         setTodos(todos.map(todo => {
